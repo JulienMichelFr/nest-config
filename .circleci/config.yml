@@ -13,12 +13,13 @@ aliases:
         name: Build
         command: npm run build
   - &image
+    image: circleci/node:14
 
 jobs:
   build:
     working_directory: ~/nest
     docker:
-      - image: &image
+      - *image
     steps:
       - checkout
       - run:
@@ -40,7 +41,7 @@ jobs:
   integration_tests:
     working_directory: ~/nest
     docker:
-      - image: &image
+      - *image
     steps:
       - checkout
       - *restore-cache
