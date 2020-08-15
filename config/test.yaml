@@ -1,0 +1,5 @@
+filename: 'test.yaml'
+database:
+  type: 'postgres'
+  port: 5432
+  uri: 'localhost'
